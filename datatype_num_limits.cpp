@@ -3,6 +3,7 @@
 using namespace std;
 
 int main() {
+	std::cout << "Short Int Max " << std::numeric_limits<short int>::max() << endl;
 	std::cout << "Int Min " << std::numeric_limits<int>::min() << endl;
 	std::cout << "Unsigned Int Max " << std::numeric_limits<unsigned int>::max() << endl;
 	std::cout << "Long Int Max " << std::numeric_limits<long int>::max() << endl;
