@@ -11,9 +11,10 @@ public:
 	void g() const { cout << j++ << endl; } // Constant functions should not be able to modify members, so why does this one work?
 
 	// Test the const function, it should not be able to modify the members
+	// Apparently you are able to modify a static member if it's defined, though
 	int get_x() const {
 		x++;
-		cout << "i inside the get_x() function: " << x << endl;
+		cout << "x inside the get_x() function: " << x << endl;
 		return x;
 	}
 };
@@ -21,6 +22,7 @@ public:
 // Static member definitions:
 int Obj::i = 10;
 int Obj::j = 12;
+int Obj::x = 0; // Maybe I need to define it?
 
 // Implement a container for the above class
 class ObjContainer {
@@ -44,6 +46,7 @@ class SmartPointer {
 
 	public:
 		SmartPointer(ObjContainer& objc) { // ObjContainer& objc should be the reference address to objc
+		// cout << "Constructor called." << endl;
 		oc = objc;
 		index = 0;	
 	}
@@ -61,6 +64,10 @@ class SmartPointer {
 
 	// overload operator ->
 	Obj* operator->() const {
+		// It looks like index is being increased for some reason
+		// cout << "Index: " << index << endl;
+		// What is oc.a[index] ?
+		//cout << "oc.a[index]" << oc.a[index] << endl; // It is a reference address value from the vector a for a given index
 		// Don't understand anything here
 		if(!oc.a[index]) {
 			cout << "Zero value";	
@@ -76,14 +83,13 @@ int main() {
 	Obj o[sz]; // This is an array of objects
 	ObjContainer oc;
 
-	/* Commented out, it proves that the compiler won't allow
-	the update of a member within a const function	
 	// Test the const function
 	Obj obj_test;
-	cout << obj_test.get_x() << endl;*/
+	cout << obj_test.get_x() << endl; // get_x() was actually able to modify the value of x
 
 	for (int i=0; i < sz; i++) {
-		oc.add(&o[i]); // &o[i] should be the reference address
+		//cout << "&o[" << i << "]: " << &o[i] << endl;	
+		oc.add(&o[i]); // &o[i] is the reference address
 	}
 		
 	// Calls the constructor of the SmartPointer class
@@ -92,6 +98,7 @@ int main() {
 		// Use the overloaded -> operator
 		sp->f(); // smart pointer call
 		sp->g();
+		//sp->get_x(); // In order for get_x() to be callable, we need to have x defined
 	} while (sp++); // Use the ++ operator overload but, which one is it? ++x or x++? It should be x++ only
 
 	return 0;
