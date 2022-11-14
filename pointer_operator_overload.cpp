@@ -4,11 +4,18 @@ using namespace std;
 
 // Consider an actual class.
 class Obj {
-	static int i, j;
+	static int i, j, x; // The static variables are being shared throughout all of the instances of this class
 
 public:
 	void f() const { cout << i++ << endl; } // Constant functions should not be able to modify members, so why does this one work?
 	void g() const { cout << j++ << endl; } // Constant functions should not be able to modify members, so why does this one work?
+
+	// Test the const function, it should not be able to modify the members
+	int get_x() const {
+		x++;
+		cout << "i inside the get_x() function: " << x << endl;
+		return x;
+	}
 };
 
 // Static member definitions:
@@ -68,6 +75,12 @@ int main() {
 	const int sz = 10;
 	Obj o[sz]; // This is an array of objects
 	ObjContainer oc;
+
+	/* Commented out, it proves that the compiler won't allow
+	the update of a member within a const function	
+	// Test the const function
+	Obj obj_test;
+	cout << obj_test.get_x() << endl;*/
 
 	for (int i=0; i < sz; i++) {
 		oc.add(&o[i]); // &o[i] should be the reference address
