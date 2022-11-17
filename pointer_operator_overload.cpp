@@ -64,14 +64,22 @@ class SmartPointer {
 	// Return value indicates end of list:
 	bool operator++() { // Prefix version
 		// cout << "++ Prefix version overload called." << endl;
-		cout << "index: " << index <<  " vs oc.a.size()" << oc.a.size() << endl; 
+		// cout << "Beginning of the ++ overload. index:  " << index << endl; 
+		// cout << "index: " << index <<  " vs oc.a.size()" << oc.a.size() << endl; 
 		// cout << "++index: " << ++index <<  " vs oc.a[index]" << oc.a[index] << endl; 
 		// sp has access to oc, because it's given on its constructor
 		if ( index >= oc.a.size() ) {
-		cout << "Inside the if statement. index: " << index << endl; 
-		 return false;
+			cout << "Inside the first if statement. index: " << index << endl; 
+			return false;
 		}
-		if ( oc.a[++index] == 0 ) return false; // Why does this work? Does vector return 0 if trying to access a value outside of its size?
+		// Why does this work? Does vector return 0
+		// if trying to access a value outside of its size?
+		if ( oc.a[++index] == 0 ) { 
+		// The test is always called and ++index = index + 1 (don't forget the assignment)
+			cout << "Inside the second if statement. index: " << index << endl; 
+			return false; 
+		}
+		// cout << "End of the ++ overload. index:  " << index << endl; 
 		return true;
 	}
 
@@ -89,14 +97,14 @@ class SmartPointer {
 
 		// What is oc.a[index] ?
 		// It is a reference address value from the vector a for a given index
-		cout << "oc.a[index]: " << oc.a[index] << endl; 
+		// cout << "oc.a[index]: " << oc.a[index] << endl; 
 		// Trying to understand what happens when the index is
 		// It looks like the reference address is 0 out of bounds
-		cout << "oc.a[10+index]: " << oc.a[10+index] << endl; 
+		// cout << "oc.a[10+index]: " << oc.a[10+index] << endl; 
 
 		if(!oc.a[index]) {
-			cout << "Zero value";	
-			return (Obj*)0; // What is (Obj*) 0?
+			cout << "Zero value" << endl;	
+			return (Obj*)0; // This is a C-style cast. We are casting 0 as an Obj*
 		}	
 		
 		return oc.a[index]; // Passes the reference value of a[index]
@@ -109,8 +117,17 @@ int main() {
 	ObjContainer oc;
 
 	// Test the const function
-	/*Obj obj_test;
-	cout << obj_test.get_x() << endl; // get_x() was actually able to modify the value of x, once x was defined */
+	/* Obj obj_test;
+	cout << obj_test.get_x() << endl; */ // get_x() was actually able to modify the value of x, once x was defined
+
+	// Test NULL pointer
+	Obj* test_null_pointer = (Obj*)0;
+	cout << "null pointer: " << test_null_pointer << endl;
+
+	ObjContainer null_oc;
+	null_oc.add(test_null_pointer);
+	SmartPointer null_sp(null_oc);
+	null_sp->f();
 
 	for (int i=0; i < sz; i++) {
 		//cout << "&o[" << i << "]: " << &o[i] << endl;	
@@ -119,14 +136,14 @@ int main() {
 
 	// Calls the constructor of the SmartPointer class
 	SmartPointer sp(oc); // Create an iterator
-	do {
+	/*do {
 		// I'm trying to figure out why the index increased
-		cout << "sp.index: " << sp.get_index() << endl;
-		cout << "sp.test_int: " << sp.get_test_int() << endl;
+		// cout << "sp.index: " << sp.get_index() << endl;
+		// cout << "sp.test_int: " << sp.get_test_int() << endl;
 		// Use the overloaded -> operator
 		sp->f(); // smart pointer call
 		sp->g();
-	} while (sp++); // Use the ++ operator overload but, which one is it? ++x or x++? It should be x++ only
+	} while (sp++); // Use the ++ operator overload but, which one is it? ++x or x++? It should be x++ only */
 
 	return 0;
 }
