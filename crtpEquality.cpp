@@ -19,6 +19,8 @@ bool operator != (Equality<Derived> const& op1, Equality<Derived> const& op2) {
 }
 
 struct Apple : public Equality<Apple>{
+	// This is a list-initialization
+	// ref: https://en.cppreference.com/w/cpp/language/list_initialization
 	Apple(int s): size{s}{};
 	int size;
 };
@@ -31,6 +33,8 @@ bool operator < (Apple const& a1, Apple const& a2) {
 }
 
 struct Man : public Equality<Man> {
+	// This is a list-initialization
+	// ref: https://en.cppreference.com/w/cpp/language/list_initialization
 	Man(std::string n): name{n}{};
 	std::string name;
 };
@@ -44,10 +48,14 @@ int main(){
 	// ref: https://cplusplus.com/reference/ios/boolalpha/ 
 	std::cout << std::boolalpha << std::endl;
 
+	// This is a list-initialization
+	// ref: https://en.cppreference.com/w/cpp/language/list_initialization
 	Apple apple1{10};
 	Apple apple2{5};
 	std::cout << "apple1 == apple2: " << (apple1 == apple2) << std::endl;
 
+	// This is a list-initialization
+	// ref: https://en.cppreference.com/w/cpp/language/list_initialization
 	Man man1{"grimm"};
 	Man man2{"jaud"};
 	std::cout << "man1 != man2: " << (man1 != man2) << std::endl;
