@@ -121,13 +121,13 @@ int main() {
 	cout << obj_test.get_x() << endl; */ // get_x() was actually able to modify the value of x, once x was defined
 
 	// Test NULL pointer
-	Obj* test_null_pointer = (Obj*)0;
+	/* Obj* test_null_pointer = (Obj*)0;
 	cout << "null pointer: " << test_null_pointer << endl;
 
 	ObjContainer null_oc;
 	null_oc.add(test_null_pointer);
 	SmartPointer null_sp(null_oc);
-	null_sp->f();
+	null_sp->f(); */
 
 	for (int i=0; i < sz; i++) {
 		//cout << "&o[" << i << "]: " << &o[i] << endl;	
@@ -136,14 +136,14 @@ int main() {
 
 	// Calls the constructor of the SmartPointer class
 	SmartPointer sp(oc); // Create an iterator
-	/*do {
+	do {
 		// I'm trying to figure out why the index increased
 		// cout << "sp.index: " << sp.get_index() << endl;
 		// cout << "sp.test_int: " << sp.get_test_int() << endl;
 		// Use the overloaded -> operator
 		sp->f(); // smart pointer call
 		sp->g();
-	} while (sp++); // Use the ++ operator overload but, which one is it? ++x or x++? It should be x++ only */
+	} while (sp++); // Use the ++ operator overload but, which one is it? ++x or x++? It should be x++ only 
 
 	return 0;
 }
