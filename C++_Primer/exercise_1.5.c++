@@ -8,8 +8,13 @@ int main() {
 
 	std::cin >> var1 >> var2;
 
-	std::cout << "The numbers " << var1 << " * " << var2 << " equals: " << var1 * var2
-		  << std::endl;
+	std::cout << "The numbers ";
+	std::cout << var1;
+	std::cout << " * ";
+	std::cout << var2 ;
+	std::cout << " equals: ";
+	std::cout << var1 * var2;
+	std::cout << std::endl;
 
 	return 0;
 	
