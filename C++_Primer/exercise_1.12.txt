@@ -1,0 +1,8 @@
+What does the following for loop do? What is the final value of sum?
+
+int sum = 0;
+for(int i = -100; i <= 100; ++i)
+	sum += i;
+
+i starts at -100 and increases by 1 until it reaches 100, inclusive. The sum is the sum of all those
+i. The final value of sum should be 0.
