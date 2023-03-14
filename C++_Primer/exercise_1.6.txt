@@ -1,0 +1,11 @@
+Explain whether the following program fragment is legal.
+std::cout << "The sum of " << v1;
+	  << " and " << v2;
+	  << " is " << v1 + v2 << std::endl;
+
+If the program is legal, what does it do? If the program is not legal, why not?
+How would you fix it?
+
+It's not legal, since we are ending the statement on each of the lines, yet we only called the
+standard output once.
+We need to either, remove the colons ending the statements on the lines which do not end with std::endl; or, call the std::cout on the all of the last two lines, like the first one does.
