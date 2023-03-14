@@ -1,0 +1,9 @@
+Indicate which, if any, of the following statements are legal:
+
+std::cout << "/*";			// Not legal
+std::cout << "*/";			// Legal
+std::cout << /* "*/" */;		// Not legal
+std::cout << /* "*/" /* "/*" */;	// Not legal
+
+After you've predicted what will happen, test your answers by compiling a program with each of
+these statements. Correct any errors you encounter.
