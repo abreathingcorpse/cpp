@@ -8,3 +8,7 @@ integer is given.
 If there are no duplicated values then, the program would print:
 "x occurs 1 times" n amount of times. That is, x is the current integer being printed so it'll be
 printed n amount of times with different xs.
+
+Updated Answer:
+So, my theory was correct. Except for the little fact that it prints the count once it encounters
+a different value. And it prints the last count only after the user enters the EOF.
