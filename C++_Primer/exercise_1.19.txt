@@ -1,0 +1,2 @@
+It asked me to revise Exercise 1.11 in order to handle val1 > val2, which I already did so,
+let's just refer to the original Exercise.
