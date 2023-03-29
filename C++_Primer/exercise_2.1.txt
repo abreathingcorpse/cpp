@@ -1,7 +1,7 @@
 What are the differences between int, long, long long, and short?
 Between an unsigned and a signed type? Between a float and a double?
 
-If we sat that int has an x amount of bits, short has less memory space reserved,
+If we say that int has an x amount of bits, short has less memory space reserved,
 while long has more and long long is for double precision float types I seem to recall
 that a long long has the same minimum amount of bytes as a long.
 
@@ -12,3 +12,19 @@ whereas a value out of range from a signed type loops around its range.
 Double is called like that for "double precision" I do not know how it works but, it has more
 bits than the float. The book does recommend do use double instead of float, saying that the
 benefits are too good and the cons are too low.
+
+After revisiting the book:
+I confused long long to long double. long long is for ints and this begun with C++ 11.
+The language guarantees that an int will be at least as large as a short and so on.
+
+Type		Minimum Size (bits)
+short		16
+int		16
+long		32
+long long	64
+
+Most compilers provide more precision than the specified minimum for float types.
+Typically floats are represented in one Word (32 bits), doubles in two words (64 bits),
+and long doubles in either three or four words (96 or 128 bits).
+The float tipically yield 7 significant digits, while double yield 16.
+On some machines, double precision operations are faster than single.
