@@ -4,3 +4,11 @@ Between an unsigned and a signed type? Between a float and a double?
 If we sat that int has an x amount of bits, short has less memory space reserved,
 while long has more and long long is for double precision float types I seem to recall
 that a long long has the same minimum amount of bytes as a long.
+
+A unsigned type has an extra bit, since it doesn't need it in order to show if the value is
+negative or positive. Furthermore, a value out of range from a unsigned type is not defined
+whereas a value out of range from a signed type loops around its range.
+
+Double is called like that for "double precision" I do not know how it works but, it has more
+bits than the float. The book does recommend do use double instead of float, saying that the
+benefits are too good and the cons are too low.
