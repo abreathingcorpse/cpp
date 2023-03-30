@@ -1,0 +1,12 @@
+To calculate a mortgage payment, what types would you use for the rate, principal, and payment?
+Explain why you selected each type.
+
+I had to search a bit, just to try to understand what each of these actually are.
+rate.- I understand that this is the interest rate.
+principal.- Apparently one can pay either to the interest or to the principal and by paying the
+	    latter then one may decrease the debt substantially.
+payment.- I guess this is what one still owes?
+
+If the above definitions are correct then I'd simply use double type for all of them,
+given that all may require me to count up the cents. Furthermore, the book's guidelines mention that
+one should use double above float, given that the pros are higher than the cons.
