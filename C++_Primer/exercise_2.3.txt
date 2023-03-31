@@ -1,0 +1,50 @@
+What output will the following code produce?
+
+unsigned u = 10, u2 = 42;
+std::cout << u2 - u << std::endl;
+std::cout << u - u2 << std::endl;
+
+int i = 10, i2 = 42;
+std::cout << i2 - i << std::endl;
+std::cout << i - i2 << std::endl;
+
+std::cout << i - u << std::endl;
+std::cout << u - i << std::endl;
+
+Assuming a 32-bit system:
+-u = -10 = 4,294,967,286
+-u2 = -42 = 4,294,967,254
+
+Therefore:
+u2 - u = 42 + 4,294,967,286
+       = 4,294,967,328
+
+But, 2^32 = 4,294,967,296 and the maximum value for an unsigned int is 2^32 - 1, which is:
+4,294,967,295
+
+That means that there's a difference of:
+4,294,967,328 - 4,294,967,295 = 33
+
+We also know that whenever we add 1 to the max value we reach to 0, therefore:
+u2 - u = 33 - 1
+       = 32
+
+Similarly:
+u - u2 = 10 - 4,294,967,254
+       = 4,294,967,244
+
+The signed ones are pretty straightforward:
+i2 - i = 42 - 10
+       = 32
+
+i - i2 = 10 - 42
+       = -32
+
+There's a conversion to unsigned int type in the last ones:
+i - u = 10 + 4,294,967,286
+      = 4,294,967,296
+But, this goes out of range, therefore:
+i - u = 0
+
+u - i = 10 + 4,294,967,286
+      = 0
