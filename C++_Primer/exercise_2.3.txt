@@ -30,8 +30,8 @@ u2 - u = 33 - 1
        = 32
 
 Similarly:
-u - u2 = 10 - 4,294,967,254
-       = 4,294,967,244
+u - u2 = 10 + 4,294,967,254
+       = 4,294,967,264
 
 The signed ones are pretty straightforward:
 i2 - i = 42 - 10
