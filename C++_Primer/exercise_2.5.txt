@@ -21,3 +21,7 @@ b) Whenever we have an int literal it'll take the type of the smallest int type 
 c) First one is a double, second a float, third a long double.
 
 d) First one is an int, second an unsigned int, third a double and last one also a double.
+
+After revisint the book:
+
+b) Fourth and fifth are also int type.
