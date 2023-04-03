@@ -1,0 +1,23 @@
+Determine the type of each of the following literals. Explain the differences among the literals
+in each of the four examples:
+
+a) 'a', L'a', "a", L"a"
+b) 10, 10u, 10L, 10uL, 012, 0xC
+c) 3.14, 3.14f, 3.14L
+d) 10, 10u, 10., 10e-2
+
+a) The first two are characters, while the second two are strings. In other words, the latter two
+   are translated to "\0a". The ones without the L prefix are char, while the ones with the L
+   prefix are of type extended char.
+
+b) Whenever we have an int literal it'll take the type of the smallest int type where the literal
+   fits. If it fits into an int, it'll be an int, if not, it'll be a long int, and then a long long.
+   The first one will try to fit into at least an int, second one into a unsigned int, third into
+   a long int and fourth into a unsigned long.
+
+   The fourth and fifth ones are the octal and hexadecimal form of the Form Feed (FF), respectively,
+   which is commonly used as page separators.
+
+c) First one is a double, second a float, third a long double.
+
+d) First one is an int, second an unsigned int, third a double and last one also a double.
