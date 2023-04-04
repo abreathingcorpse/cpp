@@ -1,0 +1,18 @@
+What values do these literals represent? What type does each have?
+
+a) "Who goes with F\145rgus?\012"
+b) 3.14e1L
+c) 1024f
+d) 3.14L
+
+Given the following octal values:
+
+\145 = e
+\012 = \n
+
+Then a) is a string literal type with the value: "Who goes with Fergus?\n"
+Remember: string literals begin with the null character \0
+
+b) 31.4 - long double
+c) 1024.0 - float type
+d) 3.14 long double
