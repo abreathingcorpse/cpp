@@ -16,3 +16,9 @@ Remember: string literals begin with the null character \0
 b) 31.4 - long double
 c) 1024.0 - float type
 d) 3.14 long double
+
+While validating my answer, I encountered that c) is not a valid literal.
+It's an integer type literal with a floating-point suffix.
+This could be solved by declaring it as either:
+1024.f - writing the point
+1024l - using an actual Integer literal suffix
