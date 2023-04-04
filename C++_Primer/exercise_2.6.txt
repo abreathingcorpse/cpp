@@ -4,3 +4,6 @@ int month = 9, day = 7;
 int month = 09, day = 07;
 
 The first line has decimal integers, while the second line has octal integers.
+
+By writing this program, I've encountered that the value of 09 is not a valid octal digit.
+Octal digits must have 3 integers, instead of 2.
