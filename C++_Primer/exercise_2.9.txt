@@ -1,0 +1,22 @@
+Explain the following definitions. For those that are illegal, explain what's wrong and how to
+correct it.
+
+a) std::cin >> int input_value;
+b) int i = { 3.14 };
+c) double salary = wage = 9999.99;
+d) int i = 3.14;
+
+a) I believe that, as long as one inputs digits only, the input will be stored on the
+   int input_value. However, I'm not sure what happens exactly if one attempts to write
+   two ints or starts trying to type characters along with those digits. If what the user types
+   is a type float number, then it'll simply be truncated into an int.
+
+b) This definition is illegal, since it's a Definition with Curly Braces. One may fix it by either
+   making dhe number inside the bracers into an int, or instead of making i an int make it into
+   any of the floating types.
+
+c) Since salary is equal to wage but, wage hasn't been defined yet. I don't this this will fly.
+   For this to work, wage should be defined before the salary and then the salary may be assigned to
+   wage.
+
+d) i will simply be truncated, in other words, i = 3;
