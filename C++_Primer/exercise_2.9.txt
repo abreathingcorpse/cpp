@@ -19,4 +19,8 @@ c) Since salary is equal to wage but, wage hasn't been defined yet. I don't this
    For this to work, wage should be defined before the salary and then the salary may be assigned to
    wage.
 
-d) i will simply be truncated, in other words, i = 3;
+d ) i will simply be truncated, in other words, i = 3;
+
+After validating:
+
+a) It simply stores the first integer. If one inputs a character then it's stored as 0.
