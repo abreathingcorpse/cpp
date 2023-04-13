@@ -1,0 +1,11 @@
+Explain whether each of the following is a declaration or a definition:
+a) extern int ix = 1024;
+b) int iy;
+c) extern int iz;
+
+Answer:
+a) is a definition, because when one initializes a declaration, it turns into a definition.
+b) is a definition, memory is being allocated since we are not using the extern keyword.
+c) since we are using the extern keyword then iz is only being declared.
+   The variable can be used by other programs but it'll need to be defined elsewhere.
+   Remember that the variable can only be defined once.
