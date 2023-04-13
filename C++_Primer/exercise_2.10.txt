@@ -15,3 +15,9 @@ global_str = \0 [null character]
 global_int = 0
 local_int & local_str are undefined since they are inside a function, which in this case happens to
 be the main function.
+
+After revisiting the book:
+It's up to each class whether we can define objects of that type without an initializer.
+If we can, the class must determine their default values. The library string class, particularly,
+uses the empty string (null char).
+Threfore, local_str is defined as the null character as well.
