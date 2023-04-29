@@ -1,0 +1,12 @@
+Which of the following definitions, if any, are invalid? Why?
+
+a) int ival = 1.01;
+b) int &rval1 = 1.01;
+c) int &rval2 = ival;
+d) int &rval3;
+
+b) & d).
+Since the references are not objects, then they do not have any memory address. Which is why
+references cannot store literals, as is the case in b).
+For the same reason, they must be initialized at the time of declaration,
+that is they must refer to another object whenever they are declared. Which is why d) is invalid.
