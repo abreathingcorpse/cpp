@@ -1,0 +1,14 @@
+Which, if any, of the following assignments are invalid? If they are valid, explain what they do.
+
+int i = 0, &r1 = i; double d = 0, &r2 = d;
+
+a) r2 = 3.14159;
+b) r2 = r1;
+c) i = r2;
+d) r1 = d;
+
+b) & d) are invalid. Since they are attempting to reassign the references.
+
+a) reassigns d to 3.14159
+c) reassigns i to d, which would still be 0, unless one executes a) first. In which case, i would be
+   reassigned to 3.14159
