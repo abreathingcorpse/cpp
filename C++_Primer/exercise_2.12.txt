@@ -1,0 +1,12 @@
+Which, if any, of the following names are invalid?
+
+a) int double = 3.14;
+b) int _;
+c) int catch-22;
+d) int 1_or_2 = 1;
+e) double Double = 3.14;
+
+I think that both c) & d) are invalid definitions/declarations.
+I seem to recall that one may not use "-" on the variable names and that one may not start a
+variable name with a number, most likely, because the compiler will attempt to use the variable
+name as a literal in that case.
