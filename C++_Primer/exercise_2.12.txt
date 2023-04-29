@@ -10,3 +10,11 @@ I think that both c) & d) are invalid definitions/declarations.
 I seem to recall that one may not use "-" on the variable names and that one may not start a
 variable name with a number, most likely, because the compiler will attempt to use the variable
 name as a literal in that case.
+
+After revisiting the book:
+Identifiers must begin with either a letter or an underscore.
+Identifiers may not contain two consecutive underscores, nor can they begin in an underscore
+following by a capital letter. Additionally, identifiers defined outside a function may not begin
+with an underscore.
+
+Therefore b) would also be invalid if it's defined outside of any function.
