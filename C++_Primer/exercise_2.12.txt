@@ -18,3 +18,9 @@ following by a capital letter. Additionally, identifiers defined outside a funct
 with an underscore.
 
 Therefore b) would also be invalid if it's defined outside of any function.
+
+After validating:
+I never realized that a) was an int double. double is a C++ keyword, which would result in an error.
+I was right with the c) & d) ones.
+However, it looks like b) can be defined even outside of the main function. Which is a, well,
+function.
