@@ -12,3 +12,12 @@ b) & d) are invalid. Since they are attempting to reassign the references.
 a) reassigns d to 3.14159
 c) reassigns i to d, which would still be 0, unless one executes a) first. In which case, i would be
    reassigned to 3.14159
+
+After validating:
+Neither b) nor d) are attempting to reassign the references, since the "&" operator was never used.
+Which means that the assignment is being done to the object to which the reference is bound to.
+
+That said then,
+b) reassigns d to i. Which is 0.
+c) reassigns i to d, which would still be 0.
+d) reassigns i to d, which would still be 0.
