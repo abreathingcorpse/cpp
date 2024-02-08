@@ -12,7 +12,7 @@ a) I believe that, as long as one inputs digits only, the input will be stored o
    is a type float number, then it'll simply be truncated into an int.
 
 b) This definition is illegal, since it's a Definition with Curly Braces. One may fix it by either
-   making dhe number inside the bracers into an int, or instead of making i an int make it into
+   making the number inside the bracers into an int, or instead of making i an int make it into
    any of the floating types.
 
 c) Since salary is equal to wage but, wage hasn't been defined yet. I don't this this will fly.
@@ -23,4 +23,6 @@ d ) i will simply be truncated, in other words, i = 3;
 
 After validating:
 
-a) It simply stores the first integer. If one inputs a character then it's stored as 0.
+a) One must declare the variable input_value, before attempting to
+   input into is using std::cin. Afterwards, it simply stores the first integer.
+   If one inputs a character then it's stored as 0.

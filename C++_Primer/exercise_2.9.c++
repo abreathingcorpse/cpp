@@ -5,7 +5,7 @@ int main() {
 	
 //	std::cin >> int input_value; Error: Expected primary-expression before int.
 	int input_value;
-	std::cin >>  input_value;
+	std::cin >> input_value;
 	std::cout << input_value << std::endl;	
 
 //	int i = { 3.14 }; Error: narrowing conversion from double to int
