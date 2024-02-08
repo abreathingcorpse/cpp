@@ -12,26 +12,36 @@ std::cout << i - u << std::endl;
 std::cout << u - i << std::endl;
 
 Assuming a 32-bit system:
--u = -10 = 4,294,967,286
--u2 = -42 = 4,294,967,254
+2^32 = 4,294,967,296, taking into account that the unsigned int includes the 0, 
+then the maximum value for an unsigned int is:
+2^32 - 1 = 4,294,967,295
+
+-u = -10 = 4,294,967,286 = 2^32 -10
+-u2 = -42 = 4,294,967,254 = 2^32 -42
 
 Therefore:
 u2 - u = 42 + 4,294,967,286
        = 4,294,967,328
 
-But, 2^32 = 4,294,967,296 and the maximum value for an unsigned int is 2^32 - 1, which is:
-4,294,967,295
+This could also be written with exponents instead:
+u2 - u = 42 + (2^32 - 10)
+       = 2^32 + 32
 
-That means that there's a difference of:
-4,294,967,328 - 4,294,967,295 = 33
-
-We also know that whenever we add 1 to the max value we reach to 0, therefore:
-u2 - u = 33 - 1
-       = 32
+Since 2^32 < 2^32 + 32, then we know that the value will loop around.
+We can get the value of where it would loop by using a modulo operation:
+(2^32 + 32) % 2^32 = 32
 
 Similarly:
 u - u2 = 10 + 4,294,967,254
        = 4,294,967,264
+
+This could also be written with exponents instead:
+u - u2 = 10 + (2^32 - 42)
+       = 2^32 - 32
+
+Since 2^32 > 2^32 - 32, then we know that the value won't loop around.
+We can get the value by using a modulo operation:
+(2^32 - 32) % 2^32 = 4,294,967,264 
 
 The signed ones are pretty straightforward:
 i2 - i = 42 - 10
@@ -43,8 +53,16 @@ i - i2 = 10 - 42
 There's a conversion to unsigned int type in the last ones:
 i - u = 10 + 4,294,967,286
       = 4,294,967,296
-But, this goes out of range, therefore:
+
+This could also be written with exponents instead:
+i - u = 10 + (2^32 - 10)
+       = 2^32 
+
+But, since the domain is [0, 2^32 -1], it'll loop around into the first number: 0
+
+Therefore:
 i - u = 0
 
+Similarly:
 u - i = 10 + 4,294,967,286
       = 0
