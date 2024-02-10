@@ -1,0 +1,7 @@
+What does the following program do?
+
+int i = 42;
+int *p1 = &i;
+*p1 = *p1 * *p1;
+
+Multiplies 42 * 42, which is 1764 and stores it within i;
