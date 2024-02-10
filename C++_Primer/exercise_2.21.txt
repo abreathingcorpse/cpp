@@ -1,0 +1,12 @@
+Explain each of the following definitions. Indicate whether any are
+illegal and, if so, why.
+
+int i = 0;
+a) double* dp = &i;
+b) int *ip = i;
+c) int *p = &i;
+
+Anwer:
+a) & b) are illegal. a) dp is a points to a double, when i is an int.
+b) ip is a pointer, the pointer expects have a memory address assigned.
+It's missing the address-of operator (&).
