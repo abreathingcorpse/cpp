@@ -1,0 +1,13 @@
+Explain the key differences betweent the pointers and references.
+Pointers are objects, whereas references are not. Therefore the
+pointers have a memory address, while the references do not. Which
+is why a pointer can not point to a reference.
+
+Furtheremore, since pointers are objects, they do not require to be
+initialized upon definition, which is not the case for the references.
+Additionally, the pointers may be updated. That is, they can point to
+another memory address later inside the code, whereas references can not.
+This is also due to the fact that pointers are objects.
+
+After revisiting the book:
+Pointers can be assigned and copied.
