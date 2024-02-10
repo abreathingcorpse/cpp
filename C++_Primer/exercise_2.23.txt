@@ -1,0 +1,16 @@
+Given a pointer p, can you determine whether p points to a valid object?
+If so, how? If not, why not?
+
+Answer:
+Not sure whether I understand the question or not.
+Can one determine whether p points to a valid object using code/compiler?
+No, not really.
+Can one determine whether p points to a valid object using logic?
+Yes.
+
+A pointer is valid whenever it's initialized. It's that simple.
+It can point to any object or, can even be a nullptr.
+If one uses an uninitialized pointer, as with an undefined variable,
+then one is simply waiting for a run-time error to take place.
+If we have an uninitialized pointer within our code, do we even have
+need for that pointer?
