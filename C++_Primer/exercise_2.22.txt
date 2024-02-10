@@ -1,0 +1,13 @@
+Assuming p is a pointer to int, explain the following code:
+
+if (p) // ...
+if (*p) // ...
+
+Answer:
+Since this exercise assumes that p is a pointer to int, then it can
+not be a nullptr. Therefore the first if will always return true.
+Since the integer to which p points to must be defined & initialized
+already.
+
+Regarding the second if, this will return true as long as the integer
+to which p points to is not 0.
