@@ -1,0 +1,19 @@
+Which of the following are legal? For those that are illegal,
+explain why.
+
+a) const int buf;
+b) int cnt = 0;
+c) const int sz = cnt;
+d) ++cnt; ++sz;
+
+Answer:
+legal: b) & c)
+illegal: a) & d)
+
+a) is not initialized. Constant objects need to be initialized. If
+an object is constant, then it can not change. If one has an
+uninitialized constant object, then does one would actually need
+that object?
+
+d) sz is a constant variable, therefore it can't be updated. It's
+an error to attempt to do so.
