@@ -1,0 +1,20 @@
+Why is the initialization of p legal but that of lp illegal?
+
+int i = 42;
+void *p = &i;
+long *lp = &i;
+
+Answer:
+p is a void pointer, which may point to any type, with the caveat
+that one may not do most of the operations, since the void pointer
+does not save the type. 
+
+lp attempts to point to a long int, while i is of type int. The
+type of the pointer and that of to what the pointer points must
+match, so that the compiler knows what kind of operations are
+allowed.
+
+After revisiting the book:
+A void pointer can only be compared to another pointer, passed
+as an argument to a function or returned from it. It can also be
+assigned to another void pointer.
